@@ -8,5 +8,16 @@
 </head>
 <body>
     <h1>Hello Django!</h1>
-</body>
+
+    {% for veri in gonderiler %}
+        <div>
+            <h3> {{ veri.baslik }} </h3>
+            <span> <b>Tarih:</b> {{ veri.y_tarihi }}</span><br>
+            <span> <b>Yazar:</b> {{ veri.yazar }}</span><br>
+            <span> <b>İçerik:</b> {{ veri.icerik }} </span><br>
+            <span> <b>Tag:</b> {{ veri.tag }} </span>
+        </div>
+    {% endfor %}
+    
+</body> 
 </html>
