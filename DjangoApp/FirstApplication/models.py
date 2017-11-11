@@ -16,3 +16,16 @@ class Gonderi(models.Model):
 
     def __str__(self):
         return self.baslik
+
+
+class Person(models.Model):
+    ad = models.CharField(max_length=300)
+    soyad = models.CharField(max_length=300)
+    mail = models.CharField(max_length=300)
+    sifre = models.CharField(max_length=300)
+
+    def yayinla(self):
+        self.save()
+
+    def __str__(self):
+        return self.ad

@@ -5,4 +5,5 @@ from FirstApplication import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',views.AnasayfaSayfaGorunumu.as_view()),
+    url(r'^register/',views.KayitOlSayfaGorunumu.as_view()),
 ]

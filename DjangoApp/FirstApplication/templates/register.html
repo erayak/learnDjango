@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{% static 'stylesheets/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheets/font-awesome.min.css' %}">
+    
+    <title>Django Öğreniyorum</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <a class="navbar-brand" href="#">Hello Django ! | Kayit Ol</a>
+        <a class="btn btn-primary" href="/">Anasayfa</a>
+    </nav>
+
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">            
+        <br>
+        <div class="card">
+            <div class="card-block">
+                <form action="." method="post">
+                    {% csrf_token %}
+                    {{ form.as_ul }}
+                    <input class="btn btn-primary" type="submit" value="Gonder" />
+                </form>
+                {{ deneme }}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">            
+        <br>
+        <div class="card">
+            <div class="card-block">
+                <b>Kullanıcılar:</b>
+                <ol>
+                    {% for i in user %}
+                        <li> {{ i.ad }} {{ i.soyad }} </li>    
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{% static 'javascripts/jquery.js' %}" ></script>
+    <script src="{% static 'javascripts/bootstrap.js' %}" ></script>
+    <script src="{% static 'javascripts/popper.js' %}" ></script>
+
+</body> 
+</html>
